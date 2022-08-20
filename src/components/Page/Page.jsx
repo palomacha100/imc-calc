@@ -19,14 +19,14 @@ const Page = () => {
       };
 
       const handleValueHeight = (e) => {
-        const valueHeight = e.target.value;
+        const valueHeight = e.target.value / 100;
         setValueHeight(e.target.value);
         console.log(valueHeight);
       };
 
       const handleClick = (e) => {
         e.preventDefault();
-        const calc =((valueWeight / 100) / valueHeight)
+        const calc =((valueWeight) / valueHeight)
         console.log(calc)
         let diagnosis
         if (calc < 18.5)
