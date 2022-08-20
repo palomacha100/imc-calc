@@ -31,15 +31,15 @@ const Page = () => {
         let diagnosis
         if (calc < 18.5)
         diagnosis = "Baixo peso"
-        if (18.5 > calc < 24.9)
+        else if (18.5 > calc < 24.9)
         diagnosis = "Intervalo normal"
-        if (25 > calc < 29.9)
+        else if (25 > calc < 29.9)
         diagnosis = "Sobrepeso"
-        if (30 > calc < 34.9)
+        else if (30 > calc < 34.9)
         diagnosis = "Obesidade classe I"
-        if (35 > calc < 39.9)
+        else if (35 > calc < 39.9)
         diagnosis = "Obesidade classe II"
-        if else(40 > calc)
+        else(40 > calc)
         diagnosis = "Obesidade classe III"
         setResult(`IMC: ${calc.toFixed(2)} (${diagnosis})`)
       };
@@ -58,7 +58,7 @@ const Page = () => {
         </HeightGroup>
         <Input id={valueHeight} onMouseMove={handleValueHeight} min="0" max="220"/>
         <Button buttonText="Calcular" onClick={handleClick}/>
-        <Text className="result" text={result} /> 
+        <Text className="result" text={setResult} /> 
     </ContainerForm>
   ) 
 }
