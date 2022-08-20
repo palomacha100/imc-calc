@@ -26,7 +26,7 @@ const Page = () => {
 
       const handleClick = (e) => {
         e.preventDefault();
-        const calc =((valueWeight) / valueHeight)
+        const calc =(valueWeight) / valueHeight)
         console.log(calc)
         let diagnosis
         if (calc < 18.5)
@@ -54,7 +54,7 @@ const Page = () => {
         <Input id={valueWeight} onMouseMove={handleValueWeight} min="0" max="200"/>  
         <HeightGroup>
             <Text className="Text" text="Altura"/>
-            <Number number={(valueHeight / 100)}></Number>
+            <Number number={(valueHeight}></Number>
         </HeightGroup>
         <Input id={valueHeight} onMouseMove={handleValueHeight} min="0" max="220"/>
         <Button buttonText="Calcular" onClick={handleClick}/>
