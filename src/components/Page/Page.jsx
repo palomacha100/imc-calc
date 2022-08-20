@@ -19,27 +19,27 @@ const Page = () => {
       };
 
       const handleValueHeight = (e) => {
-        const valueHeight = e.target.value / 100;
+        const valueHeight = e.target.value;
         setValueHeight(e.target.value);
         console.log(valueHeight);
       };
 
       const handleClick = (e) => {
         e.preventDefault();
-        const calc =(valueWeight) / valueHeight)
+        const calc =((valueWeight / valueHeight) * 100)
         console.log(calc)
         let diagnosis
         if (calc < 18.5)
         diagnosis = "Baixo peso"
-        else if (18.5 > calc < 24.9)
+        if (18.5 > calc < 24.9)
         diagnosis = "Intervalo normal"
-        else if (25 > calc < 29.9)
+        if (25 > calc < 29.9)
         diagnosis = "Sobrepeso"
-        else if (30 > calc < 34.9)
+        if (30 > calc < 34.9)
         diagnosis = "Obesidade classe I"
-        else if (35 > calc < 39.9)
+        if (35 > calc < 39.9)
         diagnosis = "Obesidade classe II"
-        else(40 > calc)
+        if (40 > calc)
         diagnosis = "Obesidade classe III"
         setResult(`IMC: ${calc.toFixed(2)} (${diagnosis})`)
       };
@@ -54,11 +54,11 @@ const Page = () => {
         <Input id={valueWeight} onMouseMove={handleValueWeight} min="0" max="200"/>  
         <HeightGroup>
             <Text className="Text" text="Altura"/>
-            <Number number={(valueHeight}></Number>
+            <Number number={(valueHeight / 100)}></Number>
         </HeightGroup>
         <Input id={valueHeight} onMouseMove={handleValueHeight} min="0" max="220"/>
         <Button buttonText="Calcular" onClick={handleClick}/>
-        <Text className="result" text={setResult} /> 
+        <Text className="result" text={result} /> 
     </ContainerForm>
   ) 
 }
