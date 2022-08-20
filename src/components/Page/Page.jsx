@@ -26,7 +26,7 @@ const Page = () => {
 
       const handleClick = (e) => {
         e.preventDefault();
-        const calc =((valueWeight / valueHeight) * 100)
+        const calc =(valueWeight / valueHeight)
         console.log(calc)
         let diagnosis
         if (calc < 18.5)
@@ -40,7 +40,7 @@ const Page = () => {
         if (35 > calc < 39.9)
         diagnosis = "Obesidade classe II"
         if (40 > calc)
-        diagnosis = "Obesidade classe II"
+        diagnosis = "Obesidade classe III"
         setResult(`IMC: ${calc.toFixed(2)} (${diagnosis})`)
       };
 
