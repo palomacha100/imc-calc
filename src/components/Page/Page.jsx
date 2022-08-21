@@ -26,20 +26,20 @@ const Page = () => {
 
       const handleClick = (e) => {
         e.preventDefault();
-        const calc =((valueWeight / valueHeight) * 100)
+        const calc =((valueWeight / Math.pow((valueHeight / 100), 2)))
         console.log(calc)
         let diagnosis
         if (calc < 18.5)
         diagnosis = "Baixo peso"
-        if (18.5 > calc < 24.9)
+        if (calc > 18.5 && calc < 24.9)
         diagnosis = "Intervalo normal"
-        if (25 > calc < 29.9)
+        if (calc > 25 && calc < 29.9)
         diagnosis = "Sobrepeso"
-        if (30 > calc < 34.9)
+        if (calc > 30 && calc < 34.9)
         diagnosis = "Obesidade classe I"
-        if (35 > calc < 39.9)
+        if (calc > 35 && calc < 39.9)
         diagnosis = "Obesidade classe II"
-        if (40 > calc)
+        if (calc > 40)
         diagnosis = "Obesidade classe III"
         setResult(`IMC: ${calc.toFixed(2)} (${diagnosis})`)
       };
@@ -63,3 +63,4 @@ const Page = () => {
   ) 
 }
 export default Page
+
